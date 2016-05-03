@@ -27,8 +27,6 @@ UsuarioModel.validaEmail = function(email, callback) {
 
 UsuarioModel.buscar = function(_id, token, callback) {
 	  
-  console.log('token:', token);
-  console.log(typeof token);
   var query = { _id: _id.user_id, token:token };
   
   db.collection('usuarios').findOne(query, function(err, data) {
