@@ -51,7 +51,7 @@ UsuarioController.buscar = function(req, res) {
 	model.buscar(idUsuario, token, function(err, data) {
 		
 		if(!data) {
-			res.status(401).json({ mensagem: 'Não autorizado' });
+			res.status(401).json({ mensagem: 'Não encontrado' });
 		} else {
 			jwt.verify(data.token, 'cs-desafio-node', function(err) {
             if (err) {
