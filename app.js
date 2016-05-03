@@ -23,8 +23,12 @@ app.use(function(err, req, res, next) {
 });
 
 
-app.listen(3000, function(){
+/*app.listen(3000, function(){
 	console.log('Server Rodando...');
+});*/
+
+app.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function(){
+  console.log("Servidor Rodando...", process.env.IP + ":" + process.env.PORT);
 });
 
 module.exports = app;
